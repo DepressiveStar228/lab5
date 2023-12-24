@@ -55,7 +55,11 @@
     </head>
     <body>                
         <div id="page">
-            <h1>Marks</h1> 
+            <c:forEach items="${students}" var="user">
+                <c:if test="${not empty students}">
+                    <h1>Marks of student ID<c:out value ="${user.getId()}"/></h1>
+                </c:if>
+            </c:forEach>
             <table class="list">
                 <tr>
                     <th>Discipline</th>
