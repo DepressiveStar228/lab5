@@ -80,9 +80,6 @@
         <input type="submit" name="send" value="Send">
     </form>
     
-    <input method="get" action="StudentAdd" type="submit" name="button" value="Students">
-    
-    <c:forEach var="student" items="${students}">
     <div id="content">
         <table class="list">
             <tr>
@@ -94,7 +91,8 @@
                 <th>Group</th>
                 <th>Faculty</th>
                 <th>Ref</th>
-            </tr>            
+            </tr>
+            <c:forEach var="student" items="${students}">
                 <tr>
                     <td><c:out value="${student.getId()}"/></td>
                     <td><c:out value="${student.getName()}"/></td>
@@ -106,9 +104,9 @@
                     <td>
                         <a href="ControllContent?id=${student.getId()}">Marks</a>
                     </td>
-                </tr>        
+                </tr>
+            </c:forEach>
         </table>
     </div>
-    </c:forEach>
     </body>
 </html>
